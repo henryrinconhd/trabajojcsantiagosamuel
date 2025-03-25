@@ -1,0 +1,14 @@
+{
+    "users": [],
+    "artworks": [],
+    "sessions": [],
+    "weeklyStats": {
+      "startDate": "",
+      "endDate": "",
+      "winner": null
+    },
+    "config": {
+      "uploadLimit": 5,
+      "currentWeek": 1
+    }
+  }

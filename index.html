@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- En index.html -->
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeArt Ranking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">AnimeArt Ranking</div>
+    <div id="auth-buttons">
+      <button id="login-btn" class="btn-outline">Iniciar Sesión</button>
+      <button id="register-btn">Registrarse</button>
+      <button id="logout-btn" class="btn-outline" style="display:none;">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div id="user-info" class="card" style="display:none;">
+      <h2 class="card-title">Bienvenido, <span id="username-display"></span></h2>
+      <p>Subidas esta semana: <span id="uploads-count">0</span>/5</p>
+      <p>Estrellas acumuladas: <span id="stars-count">0</span></p>
+      <button id="upload-btn" style="margin-top: 1rem;">Subir Nueva Obra</button>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Ranking Semanal</h2>
+      <div class="timer">
+        <span id="time-left">Tiempo restante: 6d 12h</span>
+      </div>
+      <div id="top-artworks" class="artworks-grid"></div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Galería de Arte</h2>
+      <div id="artworks-list" class="artworks-grid"></div>
+    </div>
+  </div>
+
+  <!-- Modales -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 class="modal-title" id="modal-title">Iniciar Sesión</h2>
+      <form id="auth-form">
+        <div class="form-group">
+          <input type="text" id="auth-username" class="form-control" placeholder="Usuario" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="auth-password" class="form-control" placeholder="Contraseña" required>
+        </div>
+        <button type="submit" id="auth-submit">Entrar</button>
+      </form>
+      <p id="auth-switch" style="text-align: center; margin-top: 1rem; color: var(--text-gray);">
+        ¿No tienes cuenta? <a href="#" id="switch-link" style="color: var(--primary);">Regístrate aquí</a>
+      </p>
+    </div>
+  </div>
+
+  <div id="upload-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 class="modal-title">Subir Nueva Obra</h2>
+      <form id="upload-form">
+        <div class="form-group">
+          <input type="text" id="art-title" class="form-control" placeholder="Título" required>
+        </div>
+        <div class="form-group">
+          <textarea id="art-description" class="form-control" placeholder="Descripción (opcional)"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="file" id="art-image" class="form-control" accept="image/jpeg, image/png" required>
+          <div style="margin-top: 1rem; text-align: center;">
+            <img id="image-preview" style="max-width: 100%; max-height: 300px; display: none; border-radius: 6px;">
+          </div>
+        </div>
+        <button type="submit">Subir Obra</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
